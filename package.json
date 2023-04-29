@@ -1,0 +1,28 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "Final for inf653",
+  "main": "ExpressServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aebish01/finalinf653.git"
+  },
+  "author": "Andrew Bish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aebish01/finalinf653/issues"
+  },
+  "homepage": "https://github.com/aebish01/finalinf653#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0",
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
+  }
+}
