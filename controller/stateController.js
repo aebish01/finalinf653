@@ -1,5 +1,5 @@
 const State = require('../model/State');
-const states = require('../routes/states.json');
+const states = require('../model/state.json');
 
 exports.getStates = async (req, res) => {
   let filteredStates = states;
@@ -28,19 +28,14 @@ exports.getStates = async (req, res) => {
 };
 
 exports.getState = async (req, res) => {
-  const stateCode = req.params.state.toUpperCase();
-  const state = states.find((s) => s.stateCode === stateCode);
-
-  if (state) {
-    const result = await State.findOne({ stateCode: stateCode });
-    if (result) {
-      state.funfacts = result.funfacts;
-    }
-    res.json(state);
-  } else {
-    res.status(404).json({ message: 'State not found' });
+  const state = await State.findOne({ code: req.params.code }).exec();
+  console.log(req.params.code);
+  if(!state) {
+    return res.status(204).json({ message: `State ${req.params.code} not found` });
   }
+  res.json(state);
 };
+
 
 exports.getFunFact = async (req, res) => {
   const stateCode = req.params.state.toUpperCase();

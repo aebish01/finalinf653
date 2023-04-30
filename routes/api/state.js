@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const statesController = require('../controllers/statesController');
+const stateController = require('../../controller/stateController');
 
-router.get('/', statesController.getStates);
-router.get('/:state', statesController.getState);
-router.get('/:state/funfact', statesController.getFunFact);
+router.get('/', stateController.getStates);
+router.route("/:code").get(stateController.getState);
+router.get('/:state/funfact', stateController.getFunFact);
 
 module.exports = router;
