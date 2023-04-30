@@ -115,3 +115,9 @@
 04-29-2023 	 09:46:57 	 8940b20d-b4bf-428e-9006-f18997ba6fd0 	 GET	undefined	/states/AL 
 04-29-2023 	 09:48:57 	 d4ea6bb1-02f0-401c-a1ac-a32e8ff39e3d 	 GET	undefined	/states/AL 
 04-29-2023 	 09:49:06 	 67b08e3f-c9be-4549-9012-04a9dd4e6008 	 GET	undefined	/states/AL 
+04-29-2023 	 09:52:26 	 7a1dab52-f7d7-4d02-b168-c5accb13cbc8 	 GET	undefined	/states/?contig=true%20 
+04-29-2023 	 09:55:34 	 b2caf02a-0d4c-448b-b517-4cd71dc1135e 	 GET	undefined	/states/?contig=true%20 
+04-29-2023 	 09:56:52 	 1c790130-663a-4b71-b549-377d061db261 	 GET	undefined	/states/?contig=false%20 
+04-29-2023 	 10:03:21 	 b774bb99-7426-42fc-a9cb-3021cf3c22fb 	 GET	undefined	/states/?contig=false%20 
+04-29-2023 	 10:03:36 	 ccaf7e5c-8376-4bb7-b64b-8c5d0e3d075a 	 GET	undefined	/states/?contig=true 
+04-29-2023 	 10:04:14 	 ca0bb78a-ac96-434e-a0c1-905e7140d10e 	 GET	undefined	/states/?contig=false 

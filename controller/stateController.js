@@ -5,13 +5,13 @@ exports.getStates = async (req, res) => {
   let filteredStates = states;
 
   if (req.query.contig) {
-    if (req.query.contig === '1') {
-      filteredStates = states.filter((state) => {
-        return state.stateCode !== 'HI' && state.stateCode !== 'AK';
+    if (req.query.contig === 'true') {
+      filteredStates = filteredStates.filter((state) => {
+        return state.code !== 'HI' && state.code !== 'AK';
       });
-    } else if (req.query.contig === '0') {
-      filteredStates = states.filter((state) => {
-        return state.stateCode === 'HI' || state.stateCode === 'AK';
+    } else if (req.query.contig === 'false') {
+      filteredStates = filteredStates.filter((state) => {
+        return state.code === 'HI' || state.code === 'AK';
       });
     }
   }
@@ -26,6 +26,7 @@ exports.getStates = async (req, res) => {
 
   res.json(filteredStates);
 };
+
 
 exports.getState = async (req, res) => {
   try {
