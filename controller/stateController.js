@@ -28,13 +28,24 @@ exports.getStates = async (req, res) => {
 };
 
 exports.getState = async (req, res) => {
-  const state = await State.findOne({ code: req.params.code }).exec();
-  console.log(req.params.code);
-  if(!state) {
-    return res.status(204).json({ message: `State ${req.params.code} not found` });
+  try {
+    const statecode = req.params.statecode;
+    if (!statecode) {
+      return res.status(400).json({ message: 'State code is required' });
+    }
+
+    const state = states.find(state => state.code === statecode.toUpperCase());
+    if (!state) {
+      return res.status(404).json({ message: 'State not found' });
+    }
+
+    res.json(state);
+  } catch(error) {
+    console.log(error);
   }
-  res.json(state);
 };
+
+
 
 
 exports.getFunFact = async (req, res) => {

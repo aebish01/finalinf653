@@ -28,7 +28,7 @@ app.use("/", require("./routes/root"));
 app.use("/subdir", require("./routes/subdir"));
 //api
 app.use("/states", require("./routes/api/state"));
-//app.use("/state/:state", require("./routes/api/state"))
+//app.use("/states/:state", require("./routes/api/state"));
 
 
 mongoose.connection.once("open", () => {
