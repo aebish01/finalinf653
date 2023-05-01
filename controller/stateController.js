@@ -13,7 +13,7 @@ exports.getStates = async (req, res) => {
       filteredStates = filteredStates.filter((state) => {
         return state.code === 'HI' || state.code === 'AK';
       });
-    }
+    } 
   }
 
   for (let i = 0; i < filteredStates.length; i++) {
@@ -46,8 +46,77 @@ exports.getState = async (req, res) => {
   }
 };
 
+exports.getStateCapital = async (req, res) => {
+  try {
+    const statecode = req.params.statecode;
+    if (!statecode) {
+      return res.status(400).json({ message: 'State code is required' });
+    }
 
+    const state = states.find(state => state.code === statecode.toUpperCase());
+    if (!state) {
+      return res.status(404).json({ message: 'State not found' });
+    }
 
+    res.json({ state: state.state, capital: state.capital_city });;
+  } catch(error) {
+    console.log(error);
+  }
+};
+
+exports.getStateNickname = async (req, res) => {
+  try {
+    const statecode = req.params.statecode;
+    if (!statecode) {
+      return res.status(400).json({ message: 'State code is required' });
+    }
+
+    const state = states.find(state => state.code === statecode.toUpperCase());
+    if (!state) {
+      return res.status(404).json({ message: 'State not found' });
+    }
+
+    res.json({ state: state.state, NickName: state.nickname });;
+  } catch(error) {
+    console.log(error);
+  }
+};
+
+exports.getStatePopulation = async (req, res) => {
+  try {
+    const statecode = req.params.statecode;
+    if (!statecode) {
+      return res.status(400).json({ message: 'State code is required' });
+    }
+
+    const state = states.find(state => state.code === statecode.toUpperCase());
+    if (!state) {
+      return res.status(404).json({ message: 'State not found' });
+    }
+
+    res.json({ state: state.state, Population: state.population });;
+  } catch(error) {
+    console.log(error);
+  }
+};
+
+exports.getStateAdmission = async (req, res) => {
+  try {
+    const statecode = req.params.statecode;
+    if (!statecode) {
+      return res.status(400).json({ message: 'State code is required' });
+    }
+
+    const state = states.find(state => state.code === statecode.toUpperCase());
+    if (!state) {
+      return res.status(404).json({ message: 'State not found' });
+    }
+
+    res.json({ state: state.state, admitted: state.admission_date });;
+  } catch(error) {
+    console.log(error);
+  }
+};
 
 exports.getFunFact = async (req, res) => {
   const stateCode = req.params.state.toUpperCase();
