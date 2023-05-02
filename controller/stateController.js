@@ -119,11 +119,12 @@ exports.getStateAdmission = async (req, res) => {
 };
 
 exports.getFunFact = async (req, res) => {
-  const stateCode = req.params.state.toUpperCase();
-  const state = states.find((s) => s.stateCode === stateCode);
+  const statecode = req.params.statecode;
+  if (!statecode) {
+    return res.status(400).json({ message: 'State code is required' });
+  }
 
-  if (state) {
-    const result = await State.findOne({ stateCode: stateCode });
+   const result = states.find(state => state.code === statecode.toUpperCase());
     if (result) {
       const funfacts = result.funfacts;
       if (funfacts.length > 0) {
@@ -135,7 +136,4 @@ exports.getFunFact = async (req, res) => {
     } else {
       res.status(404).json({ message: 'State not found.' });
     }
-  } else {
-    res.status(400).json({ message: 'Invalid state code.' });
-  }
 };

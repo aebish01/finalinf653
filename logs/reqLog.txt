@@ -143,3 +143,10 @@
 05-01-2023 	 01:54:07 	 083ad5f2-29dd-468c-a9e1-e70ccaac5e45 	 GET	undefined	/states/CA/admission 
 05-01-2023 	 09:50:15 	 45be0427-b9fb-4a7e-9db2-391a25892820 	 GET	undefined	/states/CA/admission 
 05-01-2023 	 09:50:20 	 7b3c1070-f518-4839-a019-398cb1e6b9f3 	 GET	undefined	/states/CA 
+05-01-2023 	 10:01:43 	 07418866-ee47-4b52-8872-5ae32cc7c91c 	 GET	undefined	/states/KS 
+05-01-2023 	 10:03:30 	 289f9e6b-30e5-4237-a184-1380c8c4aabd 	 GET	undefined	/states/KS 
+05-01-2023 	 10:03:37 	 2501f03b-036a-4fc6-9e58-4bc607849e95 	 GET	undefined	/states/KS/funfact 
+05-01-2023 	 10:04:21 	 e8bce619-3b0e-4d7d-a093-5acbe3a8bae6 	 GET	undefined	/states/KS/funfact 
+05-01-2023 	 10:04:26 	 fba78c41-eab6-4d45-b85d-b0d9207d74df 	 GET	undefined	/states/KS/funfact 
+05-01-2023 	 10:04:27 	 1da391c1-7d1e-4292-9662-8e549eeb2e91 	 GET	undefined	/states/KS/funfact 
+05-01-2023 	 10:04:29 	 5beb03a9-af81-4b1b-95bd-0e009afe4a45 	 GET	undefined	/states/KS/funfact 
