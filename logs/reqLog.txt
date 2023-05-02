@@ -141,3 +141,5 @@
 05-01-2023 	 01:45:33 	 42b8e6eb-11cf-494f-bf57-a7b665c21ebd 	 GET	undefined	/states/CA/capital 
 05-01-2023 	 01:53:45 	 4cf60b64-94e2-4993-aeed-6144094b71ae 	 GET	undefined	/states/CA/population 
 05-01-2023 	 01:54:07 	 083ad5f2-29dd-468c-a9e1-e70ccaac5e45 	 GET	undefined	/states/CA/admission 
+05-01-2023 	 09:50:15 	 45be0427-b9fb-4a7e-9db2-391a25892820 	 GET	undefined	/states/CA/admission 
+05-01-2023 	 09:50:20 	 7b3c1070-f518-4839-a019-398cb1e6b9f3 	 GET	undefined	/states/CA 
