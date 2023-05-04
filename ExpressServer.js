@@ -33,6 +33,9 @@ app.use("/states", require("./routes/api/state"));
 
 
 mongoose.connection.once("open", () => {
-    console.log("Connected to mongoDB");
-    app.listen(PORT, () => console.log(`Server is listing on port ${PORT}`));
+  console.log("Connected to MongoDB");
+  
+  const listener = app.listen(process.env.PORT, () => {
+    console.log("Your app is listening on port " + listener.address().port);
   });
+});

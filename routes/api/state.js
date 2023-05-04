@@ -9,5 +9,8 @@ router.route('/:statecode/nickname').get(stateController.getStateNickname);
 router.route('/:statecode/population').get(stateController.getStatePopulation);
 router.route('/:statecode/admission').get(stateController.getStateAdmission);
 router.route('/:statecode/funfact').get(stateController.getFunFact);
+router.route('/:statecode/funfact').post(stateController.postFunFacts);
+
+
 
 module.exports = router;

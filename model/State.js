@@ -78,7 +78,19 @@ const stateSchema = new Schema({
   facebook_url: {
     type: String,
     required: true
+  },
+  funfacts: {
+    type: [String],
+    required: false
   }
-  });
+});
 
-  module.exports = mongoose.model("State", stateSchema);
+const stateFunFactSchema = new Schema({
+  funfacts: [{ type: String }]
+});
+const State = mongoose.model("State", stateSchema);
+const StatePostFunFact = mongoose.model('StatePostFunFact', stateFunFactSchema);
+module.exports = {
+  State,
+  StatePostFunFact
+};
