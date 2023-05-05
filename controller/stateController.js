@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { State } = require('../model/State');
 const { StatePostFunFact } = require('../model/State');
+const { StatePatchFunFact } = require('../model/State');
 const states = require('../model/state.json');
 
 exports.getStates = async (req, res) => {
@@ -239,11 +240,11 @@ exports.getFunFact = async (req, res) => {
     }
   
     // Add the new fun fact to the funfacts array of the state object
-    const funfact = req.body.funfacts;
+    const funfact = req.body.funfact;
     stateObj.funfacts.push(funfact);
   
     // Convert the JavaScript object/array back to JSON and save it to the file
-    const json = JSON.stringify(data);
+    const json = JSON.stringify(data, null, 2);
     fs.writeFileSync('./model/state.json', json);
   
     // Save the modified data to the database using Mongoose
@@ -253,3 +254,80 @@ exports.getFunFact = async (req, res) => {
   
     res.status(201).json(result);
   };
+
+  exports.patchFunFacts = async (req, res) => {
+    try {
+      // Parse the request body to extract the index and new fun fact
+      const { index, funfact } = req.body;
+      if (!index) {
+        return res.status(400).json({ error: 'Index is required in request body' });
+      }
+  
+      // Convert the index to zero-based by subtracting 1
+      const zeroBasedIndex = parseInt(index) - 1;
+  
+      // Find the document for the specified state in the "states" collection
+      const statecode = req.params.statecode;
+      if (!statecode) {
+        return res.status(400).json({ message: 'State code is required' });
+      }
+      const states = JSON.parse(fs.readFileSync('./model/state.json'));
+      const stateObj = states.find(state => state.code === statecode.toUpperCase());
+  
+      if (!stateObj) {
+        return res.status(404).json({ error: `State "${statecode}" not found` });
+      }
+  
+      // Check if the funfacts array exists for the specified state
+      if (!stateObj.funfacts) {
+        return res.status(400).json({ message: `No funfacts found for state "${statecode}"` });
+      }
+  
+      // Check if the provided index is within the range of the funfacts array
+      if (zeroBasedIndex < 0 || zeroBasedIndex >= stateObj.funfacts.length) {
+        return res.status(400).json({ message: `Index ${index} is out of range for state "${statecode}"` });
+      }
+  
+      // Update the specified fun fact in the "funfacts" array
+      stateObj.funfacts[zeroBasedIndex] = funfact;
+  
+      // Update the JSON file with the updated data
+      fs.writeFileSync('./model/state.json', JSON.stringify(states, null, 2));
+  
+      // Return the updated fun fact as the response
+      res.json({ funfacts: stateObj.funfacts });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Something went wrong' });
+    }
+  };
+  
+  exports.deleteFunFact = async (req, res) => {
+    try {
+      const { index } = req.body;
+      if (!index) {
+        return res.status(400).json({ error: 'Index is required in request body' });
+      }
+      const statecode = req.params.statecode;
+      if (!statecode) {
+        return res.status(400).json({ message: 'State code is required' });
+      }
+      const states = JSON.parse(fs.readFileSync('./model/state.json'));
+      const stateObj = states.find(state => state.code === statecode.toUpperCase());
+      if (!stateObj) {
+        return res.status(404).json({ error: `State "${statecode}" not found` });
+      }
+      const funfacts = stateObj.funfacts || [];
+      const zeroBasedIndex = parseInt(index) - 1;
+      if (zeroBasedIndex >= funfacts.length) {
+        return res.status(404).json({ error: 'Fun fact not found at the specified index' });
+      }
+      funfacts.splice(zeroBasedIndex, 1);
+      fs.writeFileSync('./model/state.json', JSON.stringify(states, null, 2));
+      res.json({ funfacts });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Something went wrong' });
+    }
+  };
+  

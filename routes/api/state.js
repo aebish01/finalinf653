@@ -10,7 +10,7 @@ router.route('/:statecode/population').get(stateController.getStatePopulation);
 router.route('/:statecode/admission').get(stateController.getStateAdmission);
 router.route('/:statecode/funfact').get(stateController.getFunFact);
 router.route('/:statecode/funfact').post(stateController.postFunFacts);
-
-
+router.route('/:statecode/funfact').patch(stateController.patchFunFacts);
+router.route('/:statecode/funfact').delete(stateController.deleteFunFact);
 
 module.exports = router;
