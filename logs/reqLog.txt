@@ -256,3 +256,13 @@
 05-04-2023 	 11:47:08 	 eb135572-8718-4138-8d42-c51ac5875fa3 	 POST	undefined	/states/ks/funfact 
 05-04-2023 	 11:50:17 	 cee3f6fb-73f8-4254-9b80-1c97e24e6f45 	 POST	undefined	/states/ks/funfact 
 05-04-2023 	 11:51:55 	 28a8a401-2036-44d3-9571-6032d1e1111b 	 POST	undefined	/states/ks/funfact 
+05-04-2023 	 11:56:48 	 ebeb486a-0d8c-457b-8a06-5508c9cdf0c8 	 POST	undefined	/states/ca/funfact 
+05-04-2023 	 11:58:48 	 98ce249e-47b3-420e-a627-82c9db1019ca 	 GET	undefined	/states/ca 
+05-04-2023 	 11:58:56 	 2f1e4425-d820-453a-92f9-f98f5e8dcbd7 	 GET	undefined	/states/ca/funfact 
+05-04-2023 	 11:59:11 	 e444e181-e68a-4041-b779-e0127b5af1f8 	 GET	undefined	/states/co 
+05-04-2023 	 11:59:16 	 1055b981-93cb-4a87-b9e9-f6c1f00324f4 	 GET	undefined	/states/ak 
+05-04-2023 	 11:59:37 	 7258424e-5c38-4c72-832a-349a4ef88cc0 	 GET	undefined	/states/ak/funfacts 
+05-05-2023 	 12:05:39 	 949abd06-539e-40dd-abbb-bc3f4fbb1341 	 GET	undefined	/states/ak/funfact 
+05-05-2023 	 12:05:47 	 357dee5f-3375-4df0-8570-126891e04703 	 GET	undefined	/states/ca/funfact 
+05-05-2023 	 12:05:50 	 8d2b8d0d-5b95-4f21-95b1-498d707fee34 	 GET	undefined	/states/co/funfact 
+05-05-2023 	 12:05:51 	 d8c529f1-93c6-4bc3-9108-b0b26c1a4a6b 	 GET	undefined	/states/co/funfact 

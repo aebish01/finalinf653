@@ -102,7 +102,10 @@
     "landscape_background_url": "https://cdn.civil.services/us-states/backgrounds/1280x720/landscape/california.jpg",
     "skyline_background_url": "https://cdn.civil.services/us-states/backgrounds/1280x720/skyline/california.jpg",
     "twitter_url": "https://twitter.com/cagovernment",
-    "facebook_url": null
+    "facebook_url": null,
+    "funfacts": [
+      "The name California comes from a novel"
+    ]
   },
   {
     "state": "Colorado",
