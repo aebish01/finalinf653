@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const path = require('path');
 const app = express();
 const cors = require("cors");
 const { logger } = require("./middleware/logEvents");
@@ -35,7 +36,7 @@ app.use("/states", require("./routes/api/state"));
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
-    res.sendFile(path.join(__dirname, "views", "404.html"));
+    res.sendFile(path.join(__dirname, "view", "404.html"));
   } else if (req.accepts("json")) {
     res.json({ error: "404 Not Found" });
   } else {

@@ -81,7 +81,7 @@ const stateSchema = new Schema({
   },
   funfacts: {
     type: [String],
-    required: false
+    default: []
   }
 });
 
